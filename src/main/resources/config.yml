@@ -1,0 +1,61 @@
+Database:
+  URL: "jdbc:mariadb://%host%:%port%/%database%?user=%username%&password=%password%"
+  Host: localhost
+  Port: 3306
+  Username: root
+  Password: password
+  Database: quizgame
+
+
+Categories:
+  Math:
+    Questions:
+      '1':
+        Question: "What is 2 + 2?"
+        Answers:
+          - "4"
+          - "Four"
+      '2':
+        Question: "What is 10 * 10?"
+        Answers:
+          - "100"
+          - "Hundred"
+          - "1 Hundred"
+          - "One Hundred"
+  Minecraft:
+    Questions:
+      '1':
+        Question: "Who is the creator of minecraft?"
+        Answers:
+          - "Notch"
+          - "Markus Persson"
+      '2':
+        Question: "What Game Inspired Markus 'Notch' Persson To Start Making Minecraft?"
+        Answers:
+          - "Infiniminer"
+    # You can add as many categories as you want here.
+
+
+Messages:
+  Prefix: "&8[<GRADIENT:00FFFF>QuizGame</GRADIENT:ADD8E6>&8]"
+  NoPermission: "%prefix% &aYou have insufficient permissions."
+  NoPlayer: "%prefix% &cInvalid Player."
+  InvalidCategory: "%prefix% &cInvalid Category."
+  Help:
+    - "&8&m-------%prefix%-------"
+    - "&3⋗ &b/quizgame start <category> &3⋖ &f- &aStart a quiz game"
+    - "&3⋗ &b/quizgame score [player] &3⋖ &f- &aView your own or other players score"
+    - "&3⋗ &b/quizgame reload &3⋖ &f- &aReload the plugin"
+    - "&8&m----------------------"
+  Reload: "%prefix% &aReloaded the plugin!"
+  ScoreDisplay: "%prefix% &eYour score: &6%score%"
+  ScoreDisplayOther: "%prefix% &e%player%'s score: &6%score%"
+  GameStart:
+    - ""
+    - "       %prefix%       "
+    - "&eQuiz game started! &aCategory: &f%category%."
+    - "&eQuestion: &f%question%."
+    - ""
+  CorrectAnswer: "%prefix% &aCorrect! You earned 1 point."
+  CorrectAnswerBroadcast: "%prefix% &a%player% has answered the question in %time%."
+  Timeout: "%prefix% &cNo one answered in time. The correct answer was '%answer%'."

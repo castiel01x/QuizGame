@@ -1,0 +1,12 @@
+name: QuizGame
+main: me.castiel.quizgame.QuizGame
+version: 1.0.0
+author: "Castiel"
+api-version: "1.13"
+commands:
+  quizgame:
+    aliases:
+      - quizgames
+      - chatgame
+      - chatgames
+      - quizzes

@@ -1,0 +1,52 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'java'
+}
+
+group 'me.castiel'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
+    maven {
+        name = 'minecraft-repo'
+        url = 'https://libraries.minecraft.net/'
+    }
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+    maven {
+        name = 'CodeMC'
+        url = 'https://repo.codemc.org/repository/maven-public/'
+    }
+    maven {
+        name = 'iridiumdevelopment'
+        url = 'https://nexus.iridiumdevelopment.net/repository/maven-releases/'
+    }
+    maven { url 'https://repo.codemc.io/repository/maven-snapshots/' }
+    maven { url = 'https://mvnrepository.com/artifact/org.slf4j/slf4j-api' }
+    maven { url = 'https://jitpack.io' }
+    mavenLocal()
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.19.1-R0.1-SNAPSHOT'
+    implementation 'com.zaxxer:HikariCP:5.0.1'
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'com.iridium:IridiumColorAPI:1.0.6'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+shadowJar {
+    relocate('com.zaxxer', 'me.castiel.quizgame.libs.com.zaxxer')
+    relocate('com.iridium', 'me.castiel.quizgame.libs.com.iridium')
+    minimize()
+}
